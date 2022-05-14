@@ -1,4 +1,4 @@
-#### Simple go http CRUD server
+### Simple go http CRUD server
 
 ```mermaid
 graph LR;
@@ -47,4 +47,57 @@ graph LR;
 	methodupdate[PUT] --- client;
 	methodDelete[DELETE] --- client;
 
+```
+
+#### Usage:
+
+GET ALL
+```
+GET http://localhost:8000/movies
+```
+
+
+GET BY ID
+```
+GET http://localhost:8000/movies/3
+```
+
+
+CREATE
+```
+POST http://localhost:8000/movies
+```
+body:
+```json
+{
+    "isbn": "101",
+    "title": "Matrix",
+    "director": {
+        "firstname": "Lana",
+        "lastname": "Wachowski"
+    }
+}
+```
+
+
+UPDATE
+```
+	PUT http://localhost:8000/movies/8498081
+```
+body:
+```json
+{
+    "isbn": "789",
+    "title": "The Dark Knight",
+    "director": {
+        "firstname": "Christopher",
+        "lastname": "Nolan"
+    }
+}
+```
+
+
+DELETE
+```
+DELETE http://localhost:8000/movies/3
 ```
